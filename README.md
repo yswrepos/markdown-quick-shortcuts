@@ -1,4 +1,4 @@
-# Markdown Shortcut Extension for Visual Studio Code
+# Markdown Quick Shortcut Extension for Visual Studio Code
 
 This extension provides convenient keyboard shortcuts for common Markdown formatting tasks in Visual Studio Code. It's designed to improve your Markdown editing workflow by allowing you to quickly format text with simple keyboard commands.
 
