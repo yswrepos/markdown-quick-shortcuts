@@ -1,0 +1,133 @@
+{
+  "name": "markdown-quick-shortcuts",
+  "displayName": "markdown-shortcut",
+  "description": "",
+  "version": "0.0.1",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "markdown-shortcut.bold",
+        "mac": "cmd+b",
+        "win": "ctrl+b",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Make selected text bold in Markdown"
+      },
+      {
+        "command": "markdown-shortcut.italics",
+        "mac": "cmd+i",
+        "win": "ctrl+i",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Add italic formatting to selected text in Markdown"
+      },
+      {
+        "command": "markdown-shortcut.underline",
+        "mac": "cmd+u",
+        "win": "ctrl+u",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Add underline formatting to selected text in Markdown"
+      },
+      {
+        "command": "markdown-shortcut.code",
+        "mac": "ctrl+`",
+        "win": "ctrl+`",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Format selected text as inline code in Markdown"
+      },
+      {
+        "mac": "cmd+k",
+        "win": "ctrl+k",
+        "command": "markdown-shortcut.hyperlink",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Wrap selected text with Markdown hyperlink syntax"
+      },
+      {
+        "mac": "ctrl+cmd+i",
+        "win": "ctrl+alt+i",
+        "command": "markdown-shortcut.image",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Insert image syntax in Markdown"
+      },
+      {
+        "mac": "ctrl+m",
+        "win": "ctrl+m",
+        "command": "markdown-shortcut.inlineMath",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Insert inline math syntax in Markdown"
+      },
+      {
+        "mac": "ctrl+shift+`",
+        "win": "ctrl+shift+`",
+        "command": "markdown-shortcut.strikethrough",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Strike through selected text in Markdown"
+      }
+    ],
+    "commands": [
+      {
+        "command": "markdown-shortcut.bold",
+        "title": "Bold Text"
+      },
+      {
+        "command": "markdown-shortcut.italics",
+        "title": "Italic Text"
+      },
+      {
+        "command": "markdown-shortcut.underline",
+        "title": "Underline Text"
+      },
+      {
+        "command": "markdown-shortcut.code",
+        "title": "Inline Code"
+      },
+      {
+        "command": "markdown-shortcut.comment",
+        "title": "Insert Comment"
+      },
+      {
+        "command": "markdown-shortcut.hyperlink",
+        "title": "Insert Hyperlink"
+      },
+      {
+        "command": "markdown-shortcut.image",
+        "title": "Insert Image"
+      },
+      {
+        "command": "markdown-shortcut.inlineMath",
+        "title": "Inline Math Formula"
+      },
+      {
+        "command": "markdown-shortcut.strikethrough",
+        "title": "Strikethrough Text"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "mocha test": "mocha -u tdd --timeout 10000 --colors ./out/test/**/*.js",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
