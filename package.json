@@ -76,6 +76,20 @@
         "command": "markdown-shortcut.strikethrough",
         "when": "editorTextFocus && editorLangId == markdown",
         "description": "Strike through selected text in Markdown"
+      },
+      {
+        "mac": "cmd+-",
+        "win": "ctrl+-",
+        "command": "markdown-shortcut.unorderedList",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Turn a paragraph into an unordered list."
+      },
+      {
+        "mac": "cmd+=",
+        "win": "ctrl+=",
+        "command": "markdown-shortcut.sortedList",
+        "when": "editorTextFocus && editorLangId == markdown",
+        "description": "Turn a paragraph into an sorted list."
       }
     ],
     "commands": [
@@ -114,6 +128,14 @@
       {
         "command": "markdown-shortcut.strikethrough",
         "title": "Strikethrough Text"
+      },
+      {
+        "command": "markdown-shortcut.unorderedList",
+        "title": "Turn a paragraph into an unordered list."
+      },
+      {
+        "command": "markdown-shortcut.sortedList",
+        "title": "Turn a paragraph into an sorted list."
       }
     ]
   },

@@ -1,4 +1,4 @@
-![Markdown Quick Shortcuts Extension](images/markdown-quick-shortcuts.png)
+<!-- ![Markdown Quick Shortcuts Extension](images/markdown-quick-shortcuts.png) -->
 
 # Markdown Quick Shortcut Extension for Visual Studio Code
 
@@ -16,6 +16,10 @@ With this extension, you can easily apply Markdown formatting to text in Visual 
 - **Hyperlink** (`Cmd+K` on macOS, `Ctrl+K` on Windows): Insert a hyperlink.
 - **Image** (`Control+Cmd+I` on macOS, `Ctrl+Alt+I` on Windows): Insert an image link.
 - **Inline Math Formula** (`Control+M` on macOS and Windows): Insert an inline math formula.
+- **Make into an unordered list** (`Cmd+-` on macOS, `Ctrl+-` on Windows):
+Convert the selected paragraph into an unordered list.
+- **Make into an sorted list** (`Cmd+=` on macOS, `Ctrl+=` on Windows):
+Convert the selected paragraph into an sorted list.
 
 ## Installation
 

@@ -96,6 +96,38 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	});
 
+	// Add unorderedList command
+	let unorderedListDisposable = vscode.commands.registerCommand('markdown-shortcut.unorderedList', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (editor) {
+			const document = editor.document;
+			const selection = editor.selection;
+			editor.edit(editorBuilder => {
+				for (let i = selection.start.line; i <= selection.end.line; i++) {
+					const line = document.lineAt(i)
+					editorBuilder.insert(line.range.start, '- ');
+				}
+			})
+		}
+	})
+
+	// Add sortedList command
+	let sortedListListDisposable = vscode.commands.registerCommand('markdown-shortcut.sortedList', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (editor) {
+			const document = editor.document;
+			const selection = editor.selection;
+			editor.edit(editBuilder => {
+				let lineNumber = 1;
+				for (let i = selection.start.line; i <= selection.end.line; i++) {
+					const line = document.lineAt(i);
+					editBuilder.insert(line.range.start, `${ lineNumber }. ` );
+					lineNumber++;
+				}
+			});
+		}
+	})
+
 	context.subscriptions.push(
 		boldDisposable,
 		italicsDisposable,
@@ -105,7 +137,9 @@ export function activate(context: vscode.ExtensionContext) {
 		hyperlinkDisposable,
 		imageDisposable,
 		inlineMathDisposable,
-		strikethroughDisposable
+		strikethroughDisposable,
+		unorderedListDisposable,
+		sortedListListDisposable
 	);
 }
 
