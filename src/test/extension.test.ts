@@ -66,4 +66,32 @@ suite('Extension Test Suite', () => {
         await testMarkdownCommand('markdown-shortcut.image', 'Hello', '![Hello](url)', 'Text should be formatted as an image link');
     });
 
+    test('Remove Bold Command Test', async () => {
+        await testMarkdownCommand('markdown-shortcut.bold', '**Hello**', 'Hello', 'Text should not be bold');
+    });
+
+    test('Remove Italics Command Test', async () => {
+        await testMarkdownCommand('markdown-shortcut.italics', '*Hello*', 'Hello', 'Text should not be italic');
+    });
+
+    test('Remove Underline Command Test', async () => {
+        await testMarkdownCommand('markdown-shortcut.underline', '<u>Hello</u>', 'Hello', 'Text should not be underlined');
+    });
+
+    test('Remove Inline Code Command Test', async () => {
+        await testMarkdownCommand('markdown-shortcut.code', '`Hello`', 'Hello', 'Text should not be formatted as inline code');
+    });
+
+    test('Remove Strikethrough Command Test', async () => {
+        await testMarkdownCommand('markdown-shortcut.strikethrough', '~~Hello~~', 'Hello', 'Text should not be strikethrough');
+    });
+
+    test('Remove Hyperlink Command Test', async () => {
+        await testMarkdownCommand('markdown-shortcut.hyperlink', '[Hello](url)', 'Hello', 'Text should not be formatted as a hyperlink');
+    });
+
+    test('Remove Image Command Test', async () => {
+        await testMarkdownCommand('markdown-shortcut.image', '![Hello](url)', 'Hello', 'Text should not be formatted as an image link');
+    });
+
 });
