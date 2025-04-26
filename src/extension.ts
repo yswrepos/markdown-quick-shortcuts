@@ -45,6 +45,22 @@ function formatText(editor: vscode.TextEditor, before: string, after: string = b
 			const newPosition = selection.start.translate(0, before.length);
 			editor.selection = new vscode.Selection(newPosition, newPosition);
 		}
+		// If the selection is not empty and after includes "url" select the "url" after inserting the markdown
+		else if (!selection.isEmpty && after.includes("url")) {
+			// Calculate the new selection after the formatted text has been inserted
+			const newRange = new vscode.Range(
+				selection.start,
+				selection.start.translate(0, before.length + editor.document.getText(selection).length + after.length)
+			);
+			const newSelection = editor.document.getText(newRange);
+		
+			// Find "url" in the new selection and then select it
+			const urlIndex = newSelection.indexOf("url");
+			if (urlIndex !== -1) {
+				const newPosition = selection.start.translate(0, urlIndex);
+				editor.selection = new vscode.Selection(newPosition, newPosition.translate(0, 3));
+			}	
+		}
 	});
 }
 

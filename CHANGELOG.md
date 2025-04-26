@@ -14,3 +14,8 @@
 ### Fixed
 - Special character handling in text formatting with proper regex escaping
 - Cursor position is now correctly maintained when toggling formats
+
+## [0.0.6] - 2025-04-26
+
+### Improved
+- The "url" text is automatically selected after text is converted to a hyperlink or image 
